@@ -1,0 +1,9 @@
+{
+    "categories":[
+        {"id":1,
+        "name":"Bilgisayar"},
+        {"id":2,
+        "name":"Ekipman"}
+    ]
+
+}
