@@ -17,14 +17,17 @@
             Bu kategoride ürün yoktur...
         </div>
     </ng-template>
-    <div *ngFor="let product of products | productFilter:filterText" class="card ms-3" style="width: 18rem;">
-        <img [src]="product.imageUrl" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">
+
+    <div *ngFor="let product of products | productFilter:filterText" class="card ms-3 float-start col-4  " >
+        <img [src]="product.imageUrl" class="rounded mx-auto d-block col-9" alt="..." >
+        <div class="card-body mx-auto ">
+            <h5 class="card-title mx-auto">
                 {{product.name}} {{product.price | currency: 'USD':true:'1.2-2'}}
             </h5>
-            <p class="card-text">{{product.description}}</p>
+            <p class="card-text ">{{product.description}}</p>
             <a (click)="addToCart(product)" class="btn btn-primary">Sepete ekle</a>
         </div>
     </div>
+
+       
 </div>

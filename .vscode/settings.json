@@ -1,0 +1,8 @@
+{
+    "explorer.openEditors.minVisible": 15,
+    "editor.fontSize": 15,
+    "debug.console.fontSize": 15,
+    "terminal.integrated.fontSize": 15,
+    "scm.inputFontSize": 16,
+    "editor.tabSize": 8
+}

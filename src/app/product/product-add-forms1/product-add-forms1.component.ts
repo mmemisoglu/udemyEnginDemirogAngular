@@ -3,15 +3,22 @@ import { Product } from '../product';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/category/category';
 import { NgForm } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
+import { SweetAlert } from 'sweetalert/typings/core';
+import { SweetalertService } from 'src/app/services/sweetalert.service';
 
 @Component({
   selector: 'app-product-add-forms1',
   templateUrl: './product-add-forms1.component.html',
   styleUrls: ['./product-add-forms1.component.css'],
-  providers: [CategoryService]
+  providers: [CategoryService,ProductService]
 })
 export class ProductAddForms1Component implements OnInit {
-  constructor(private categoryService: CategoryService) { }
+  constructor(
+    private categoryService: CategoryService,
+    private productService:ProductService,
+    private sweetalertService:SweetalertService
+    ) { }
   model: Product = new Product();
   categories: Category[];
   ngOnInit(): void {
@@ -20,7 +27,9 @@ export class ProductAddForms1Component implements OnInit {
     })
   }
   add(form: NgForm) {
-    console.log(form.value.name)
+    this.productService.addProduct(this.model).subscribe(data=>{
+      this.sweetalertService.success(data.name + " başarıyla eklendi.")
+    })
   }
 
 }
