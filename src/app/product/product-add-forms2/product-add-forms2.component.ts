@@ -1,32 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product';
+import { Category } from 'src/app/category/category';
+import { CategoryService } from 'src/app/services/category.service';
+import { ProductService } from 'src/app/services/product.service';
+import { SweetalertService } from 'src/app/services/sweetalert.service';
 
 @Component({
   selector: 'app-product-add-forms2',
   templateUrl: './product-add-forms2.component.html',
-  styleUrls: ['./product-add-forms2.component.css']
+  styleUrls: ['./product-add-forms2.component.css'],
+  providers: [CategoryService,ProductService]
 })
-export class ProductAddForms2Component {
-
-  constructor(private formBuilder:FormBuilder){  }
+export class ProductAddForms2Component implements OnInit {
   
-  productAddForm:FormGroup;
-  product:Product = new Product();
-  createProductAddForm(){
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private categoryService: CategoryService,
+    private productService: ProductService,
+    private sweetalertService: SweetalertService,
+  ) { }
+
+  productAddForm: FormGroup;
+  product: Product = new Product();
+  categories: Category[];
+  createProductAddForm() {
     this.productAddForm = this.formBuilder.group({
-      name:["",Validators.required],
-      description:["",Validators.required],
-      imageUrl:["",Validators.required],
-      price:["",Validators.required],
-      categoryId:["",Validators.required]
+      name: ["", Validators.required],
+      description: ["", Validators.required],
+      imageUrl: ["", Validators.required],
+      price: ["", Validators.required],
+      categoryId: ["", Validators.required]
     });
   }
 
-  add(){
-    if(this.productAddForm.valid){
-      this.product = Object.assign({},this.productAddForm.value)
+  ngOnInit(): void {
+    this.createProductAddForm();
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data
+    })
+  }
+
+  add() {
+    if (this.productAddForm.valid) {
+      this.product = Object.assign({}, this.productAddForm.value)
     }
+
+    this.productService.addProduct(this.product).subscribe(data=>{
+      this.sweetalertService.success(data.name + " başarıyla eklendi.")
+    });
+    
   }
 
 }
