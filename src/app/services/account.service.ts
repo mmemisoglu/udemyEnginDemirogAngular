@@ -6,21 +6,20 @@ export class AccountService {
 
   constructor() { }
   loggeIn = false;
-  login(user:User):boolean{
-    if(user.userName == "Mustafa"&&user.password=="111"){
-      return true;
+  login(user: User): boolean {
+    if (user.userName == "Mustafa" && user.password == "111") {
       this.loggeIn = true;
-      localStorage.setItem("isLogged","user.userName");
-      
+      localStorage.setItem("isLogged", "user.userName");
+      return true;
     }
     return false;
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     return this.loggeIn;
   }
 
-  logOut(){
+  logOut() {
     localStorage.removeItem("isLogged");
     this.loggeIn = false;
   }
