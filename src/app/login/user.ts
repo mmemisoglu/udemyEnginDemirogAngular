@@ -1,5 +1,5 @@
 
-class User{
+export class User{
         userName:String;
         password:String;
 }
