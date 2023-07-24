@@ -1,27 +1,21 @@
-# Shop
+# Angular 
+## [TR]
+## Engin Demiroğ Udemy Eğitimi Ders Uygulaması
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+Engin Demiroğ hocamızın Udemy üzerinden anlatımını gerçekleştirdiği Angular eğitimindeki projenin güncel kaynak kodudur. Eğitimi alan arkadaşların takıldıkları yerde github reposu üzerinden ilgili aşamaya erişebilmeleri hedeflenmektedir. Yapılan örnek projenin aşamaları "Bölüm No/Ders No" şeklinde commit edilmiştir. 
 
-## Development server
+### Örnek
+| Commit Mesajı | Bölüm | Ders |
+| ------ | ------ | ------ |
+| 77/425  | 77  | 425  |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## [ENG]
 
-## Code scaffolding
+## Engin Demiroğ Udemy Course Project Application
+This is the current source code of the project taught by Engin Demiroğ on Udemy, specifically in his Angular course. The goal is to provide the students who have taken the course with access to the relevant stages of the project through a GitHub repository. The steps of the sample project are committed with the format "Section No/Lesson No".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Example
+| Commit Message | Section | Lesson |
+| ------ | ------ | ------ |
+| 77/425  | 77  | 425  |
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
